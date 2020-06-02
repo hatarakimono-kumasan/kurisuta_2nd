@@ -1,0 +1,20 @@
+/*=================================================================
+footer
+==================================================================*/
+footer {
+	width: 100%;
+	height: 8rem;
+
+	small {
+		display: block;
+		text-align: center;
+		line-height: 8rem;
+	}
+}
+@include tab {
+}
+
+@include lap {
+}
+@include pc {
+}

@@ -1,0 +1,380 @@
+/*=================================================================
+main
+==================================================================*/
+/*共通
+-------------------------------------------------------------------*/
+/* h2 */
+.concept,
+.service {
+	margin: 10rem 15px 4rem;
+
+	h2 {
+		width: 35rem;
+		position: relative;
+		margin-bottom: 5rem;
+	}
+	h2::after {
+		content: "";
+		width: 9rem;
+		height: 3px;
+		display: block;
+		position: absolute;
+		right: 10%;
+		top: 45%;
+		transform: translateX(-50%);
+		background-color: $color-text-primary;
+	}
+}
+.works,
+.contact {
+	padding: 10rem 15px 4rem;
+
+	h2 {
+		width: 34rem;
+		position: relative;
+		color: $color-text-secondary;
+		text-align: center;
+		margin-bottom: 5rem;
+	}
+	h2::after {
+		content: "";
+		width: 9rem;
+		height: 3px;
+		display: block;
+		position: absolute;
+		left: 86%;
+		top: 45%;
+		transform: translateX(-50%);
+		background-color: $color-text-secondary;
+	}
+}
+
+/*light_text*/
+.concept,
+.service {
+	.light_text {
+		@include light_text-bg-white;
+	}
+}
+.works,
+.contact,
+.header_contact_bg {
+	.light_text {
+		@include light_text-bg-black;
+	}
+}
+
+/*concept
+-------------------------------------------------------------------*/
+
+.concept {
+	h3 {
+		text-align: center;
+		margin: 5rem 0 3rem;
+	}
+	.concept_box {
+		.concept_bg {
+			margin: 3rem auto 4rem;
+			width: 100%;
+
+			&_img {
+				background: url("/src/img/concept-image@2x.jpg") no-repeat;
+				max-width: 395px;
+				height: 15rem;
+				margin: auto;
+			}
+		}
+	}
+}
+/*works
+-------------------------------------------------------------------*/
+.works {
+	background: url("/src/img/works-bgi@2x.jpg") center / cover;
+
+	&_inner {
+		max-width: 1100px;
+		margin: auto;
+	}
+
+	&_card_wrapper {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	a {
+		@include btn;
+	}
+}
+.card {
+	width: 320px;
+	height: auto;
+	margin: 0 auto 20px;
+
+	&__imgframe {
+		width: 100%;
+		height: auto;
+		// padding-top: 56.25%;
+		// background-size: cover;
+		// box-sizing: border-box;
+	}
+	&__textbox {
+		width: 100%;
+		height: auto;
+		padding: 25px 20px;
+		background: #ffffff;
+		box-sizing: border-box;
+	}
+	&__textbox > * + * {
+		margin-top: 10px;
+	}
+	&__overviewtext {
+		font-size: 12px;
+		line-height: 150%;
+	}
+	&-skin {
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+	}
+}
+
+/*service
+-------------------------------------------------------------------*/
+.service {
+	margin: 10rem 0 4rem;
+
+	h2 {
+		padding-left: 15px;
+		max-width: 1100px;
+		margin: auto;
+	}
+	&_item {
+		width: 100%;
+		height: 25rem;
+		margin-bottom: 3rem;
+
+		p {
+			color: $color-text-secondary;
+			text-align: center;
+			line-height: 250px;
+
+			&:hover {
+				background-color: #282f35;
+				opacity: 0.7;
+			}
+		}
+	}
+	&_item:nth-of-type(1) .service_img {
+		background: url("/src/img/service-img01@2x.jpg") no-repeat;
+		max-width: 480px;
+		margin: auto;
+	}
+	&_item:nth-of-type(2) .service_img {
+		background: url("/src/img/service-img02@2x.jpg") no-repeat;
+		max-width: 480px;
+		margin: auto;
+	}
+	&_item:nth-of-type(3) .service_img {
+		background: url("/src/img/sevice-img03@2x.jpg") no-repeat;
+		max-width: 480px;
+		margin: auto;
+	}
+	.light_text {
+		padding-right: 15px;
+	}
+}
+
+/*contact
+-------------------------------------------------------------------*/
+.contact {
+	background: url("/src/img/contact-bgi@2x.jpg") center;
+	position: relative;
+
+	&_inner {
+		max-width: 1100px;
+		margin: auto;
+	}
+
+	p {
+		color: $color-text-secondary;
+		text-align: center;
+	}
+	a {
+		@include btn;
+		margin: 3rem auto 4rem;
+	}
+}
+
+/*=================================================================
+contact.html
+==================================================================*/
+.form {
+	margin: 10rem 15px 8rem;
+
+	.label,
+	.form_item {
+		width: 100%;
+	}
+	&_box {
+		margin-bottom: 2.2rem;
+	}
+	&_submit {
+		@include btn;
+	}
+}
+
+@include tab {
+}
+
+@include lap {
+}
+@include pc {
+	/*=================================================================
+main
+==================================================================*/
+	/*共通
+-------------------------------------------------------------------*/
+	/* 外枠 */
+	.works,
+	.contact {
+		padding: 10rem 12rem 7rem;
+	}
+	/* h2 */
+	.concept h2,
+	.service h2 {
+		width: 100rem;
+	}
+	.concept h2::after,
+	.service h2::after {
+		width: 20rem;
+		right: 37%;
+		top: 48%;
+	}
+	.works h2,
+	.contact h2 {
+		width: 100%;
+		text-align: end;
+		padding-right: 25rem;
+	}
+	.works h2::after,
+	.contact h2::after {
+		width: 20rem;
+		top: 53%;
+		left: 91%;
+	}
+	/*薄いテキスト*/
+	.concept,
+	.service {
+		.light_text {
+			// position: absolute;
+			// top: 65%;
+			// left: 42%;
+			font-size: 9rem;
+			line-height: calc(29 / 90);
+			margin-top: 7rem;
+		}
+	}
+	.works,
+	.contact,
+	.header_contact_bg {
+		.light_text {
+			// position: absolute;
+			// top: 65%;
+			// left: 42%;
+			font-size: 9rem;
+			line-height: calc(29 / 90);
+			margin-top: 7rem;
+		}
+	}
+
+	/*concept
+-------------------------------------------------------------------*/
+
+	.concept {
+		width: 1100px;
+		margin: 10rem auto 7rem;
+
+		.concept_box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: relative;
+
+			p {
+				width: 44rem;
+			}
+			.concept_bg {
+				margin: inherit;
+				width: inherit;
+
+				&_img {
+					width: 44rem;
+					height: 22rem;
+					margin-right: 12rem;
+					max-width: inherit;
+				}
+			}
+		}
+	}
+
+	/*works
+-------------------------------------------------------------------*/
+	.works {
+		.works_card_wrapper {
+			display: flex;
+			width: 1100px;
+			justify-content: space-around;
+			margin: auto;
+
+			.card {
+				margin: inherit;
+			}
+		}
+	}
+	/*service
+-------------------------------------------------------------------*/
+	.service {
+		margin-bottom: 7rem;
+
+		.service_list {
+			display: flex;
+
+			.service_item {
+				.service_img {
+					margin: inherit;
+					max-width: 800px;
+					min-width: 390px;
+					width: 100%;
+					background-size: cover;
+
+					p {
+						font-size: 4rem;
+					}
+				}
+			}
+		}
+		.light_text {
+			margin-right: 12rem;
+		}
+	}
+	/*contact
+-------------------------------------------------------------------*/
+	/*==============================================================
+contact.html
+==================================================================*/
+	.form {
+		width: 70rem;
+		margin: 9.7rem auto 8rem;
+
+		&_box {
+			&_wrapper {
+				display: flex;
+			}
+			&_inner {
+				width: inherit;
+				margin-right: 20px;
+			}
+			#comment {
+				height: 17.1rem;
+			}
+		}
+	}
+}

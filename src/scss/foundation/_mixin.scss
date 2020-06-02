@@ -1,0 +1,88 @@
+// --------------------------------------------------------
+//  mixin (mobile to pc)
+// --------------------------------------------------------
+
+$tab: 768px;
+$lap: 1024px;
+$pc: 1200px;
+
+@mixin tab {
+	@media screen and (min-width: ($tab)) {
+		@content;
+	}
+}
+
+@mixin lap {
+	@media screen and (min-width: ($lap)) {
+		@content;
+	}
+}
+
+@mixin pc {
+	@media screen and (min-width: ($pc)) {
+		@content;
+	}
+}
+
+// 使用法
+//
+//@include tab{};
+
+/*============================================================================== 
+文字の改行位置（fvのところ）mixin
+==============================================================================*/
+
+.br-sp {
+	display: block;
+}
+.br-pc {
+	display: none;
+}
+@include pc {
+	.br-sp {
+		display: none;
+	}
+	.br-pc {
+		display: block;
+	}
+}
+/*============================================================================== 
+トラッキング(letter-spacing)のmixin
+==============================================================================*/
+@mixin tracking($tracking) {
+	letter-spacing: ($tracking / 1000) + em;
+}
+
+// 使用法
+//   p {
+//    @include tracking(16);
+//   }
+
+/*============================================================================== 
+繰り返し使うもの
+==============================================================================*/
+@mixin btn {
+	padding: 2rem 7.1rem;
+	background-color: #f7d43f;
+	border-radius: 50px;
+	text-align: center;
+	display: block;
+	width: 235px;
+	margin: 8rem auto 4rem;
+}
+@mixin light-text-bg-white {
+	font-size: 4rem;
+	line-height: calc(67 / 40);
+	font-weight: bold;
+	text-align: end;
+	opacity: 0.05;
+}
+
+@mixin light-text-bg-black {
+	font-size: 4rem;
+	line-height: calc(67 / 40);
+	font-weight: bold;
+	text-align: inherit;
+	opacity: 0.2;
+	color: $color-text-secondary;
+}

@@ -1,0 +1,299 @@
+/*=================================================================
+index.html header
+==================================================================*/
+.swiper-container {
+	position: relative;
+	height: 599px;
+
+	.header_box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 78px;
+		position: fixed;
+		width: 100%;
+		z-index: 9;
+
+		a {
+			p {
+				color: $color-text-secondary;
+				font-size: 2.6rem;
+				font-weight: bold;
+				font-style: italic;
+				padding-left: 15px;
+			}
+		}
+	}
+	.swiper-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		.header_bg_1 {
+			background: url("/src/img/fv-bgi_01@2x.jpg") center no-repeat;
+			width: 100%;
+			height: 599px;
+			min-width: 345px;
+			padding: 0 15px;
+			position: relative;
+			background-size: cover;
+
+			p,
+			h1,
+			h2 {
+				color: $color-text-secondary;
+			}
+		}
+		.header_bg_2 {
+			background: url("/src/img/fv-bgi_02@2x.jpg") center no-repeat;
+			width: 100%;
+			height: 599px;
+			min-width: 345px;
+			padding: 0 15px;
+			position: relative;
+			background-size: cover;
+
+			p,
+			h1,
+			h2 {
+				color: $color-text-secondary;
+			}
+		}
+		.header_bg_3 {
+			background: url("/src/img/fv-bgi_03@2x.jpg") center no-repeat;
+			width: 100%;
+			height: 599px;
+			min-width: 345px;
+			padding: 0 15px;
+			position: relative;
+			background-size: cover;
+
+			p,
+			h1,
+			h2 {
+				color: $color-text-secondary;
+			}
+		}
+	}
+}
+
+.fv_text_box {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+
+	h1 {
+		margin-bottom: 5.3rem;
+	}
+}
+/* ================================================================
+humberger-menu
+===================================================================*/
+header {
+	.burger-btn {
+		display: block;
+		width: 39px;
+		height: 39px;
+		position: relative;
+		z-index: 3;
+		background-color: transparent;
+		border: none;
+
+		.bar {
+			width: 20px;
+			height: 3px;
+			display: block;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #fff;
+		}
+		.bar_top {
+			top: 10px;
+		}
+		.bar_mid {
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.bar_bottom {
+			bottom: 10px;
+		}
+	}
+}
+.burger-btn.close .bar_top {
+	transform: translate(-50%, 10px) rotate(45deg);
+	transition: transform 0.3s;
+}
+.burger-btn.close .bar_mid {
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.burger-btn.close .bar_bottom {
+	transform: translate(-50%, -8px) rotate(-45deg);
+	transition: transform 0.3s;
+}
+.nav-wrapper {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2; /*キービジュアルと.btn_triggerとの重なりの前後関係を調整*/
+}
+.header-nav {
+	width: 100%;
+	height: 100%;
+	background-color: #1b1310;
+	z-index: 2;
+}
+.header-nav .nav-list {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	height: 10rem;
+}
+.header-nav .nav-item {
+	margin-right: 0;
+	margin-bottom: 40px;
+}
+.noscroll {
+	overflow: hidden;
+}
+/*header-navの中身
+----------------------------------------------------------------------*/
+.nav-contact_item {
+	width: 10rem;
+	height: 6rem;
+	line-height: 6rem;
+
+	a {
+		color: $color-text-secondary;
+	}
+}
+
+/*=================================================================
+スクロールでヘッダーの色を変える
+==================================================================*/
+.hidden {
+	background: none;
+	transition: all 0.5s ease;
+}
+
+/* other - nav */
+
+.header_box.black {
+	background: #282f35;
+	height: 100px;
+}
+
+/*=================================================================
+contact.html header
+==================================================================*/
+.header_contact_bg {
+	background: url("/src/img/contact-page-bgi@2x.jpg");
+	width: 100%;
+	height: 360px;
+	position: relative;
+
+	.header_box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 15px;
+		height: 100px;
+		// position: fixed;
+		// width: 100%;
+
+		p {
+			color: $color-text-secondary;
+			font-size: 2.6rem;
+			font-weight: bold;
+			font-style: italic;
+			padding-left: 15px;
+		}
+	}
+	h2 {
+		// text-align: center;
+		// line-height: calc(360px - 78px);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: $color-text-secondary;
+	}
+	.header_contact_text {
+		position: absolute;
+		top: 270px;
+		padding-left: 15px;
+	}
+}
+
+@include lap {
+}
+@include pc {
+	.header_bg p {
+		margin-left: 12rem;
+	}
+	.nav-wrapper {
+		display: block;
+		height: inherit;
+	}
+	.header-nav {
+		width: 100%;
+		background-color: transparent;
+		z-index: inherit;
+	}
+	.header-nav .nav-list {
+		position: inherit;
+		transform: inherit;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.nav-list {
+		margin-right: 12rem;
+		height: 78px;
+	}
+	.burger-btn,
+	.bars {
+		display: none;
+	}
+	/*fv
+	-----------------------------------------------------------------*/
+	.fv_text_box {
+		top: 80%;
+		left: 31%;
+
+		h1 {
+			margin-bottom: 2.3rem;
+			line-height: calc(50 / 70);
+		}
+		h2 {
+			font-size: 4rem;
+		}
+	}
+	/*=============================================================
+contact.html header
+==================================================================*/
+	.header_contact_bg {
+		height: 45.3rem;
+
+		.header_box p {
+			width: 100%;
+		}
+		.header_contact_text {
+			margin-left: 48px;
+		}
+		.nav-wrapper {
+			position: inherit;
+		}
+	}
+}

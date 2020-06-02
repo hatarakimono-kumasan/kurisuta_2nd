@@ -1,0 +1,94 @@
+// --- color ---
+$color-black: #171717;
+$color-gray: #8f8f8f;
+$color-white: #ffffff;
+$color-blue: #3333ff;
+$color-red: #c90926;
+
+// --- color set text ---
+$color-text-primary: $color-black;
+$color-text-secondary: $color-white;
+$color-text-sub: $color-gray;
+
+// --- color set background ---
+$color-globalNav-background: #282f35;
+$color-body-background: $color-white;
+$color-footer-background: $color-white;
+
+// --- font family ---
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+html {
+	font-family: "Noto Sans JP", "Noto Serif", sans-serif;
+	font-size: 62.5%; /*1rem=16px ➞　1rem=10px*/
+	word-break: break-word;
+}
+/*和文と英文でfontを分ける
+-----------------------------------------------------------------*/
+/*(英文)*/
+:lang(en) {
+	font-family: "Noto Serif", sans-serif;
+}
+/*（和文）*/
+:lang(ja) {
+	font-family: "Noto Sans JP", sans-serif, "Font Awesome 5 Brands";
+}
+// --- color brands(固定)---
+$color-twitter: #1da1f2;
+$color-facebook: #3c5a99;
+$color-line: #00b900;
+$color-googlePlus: #dd5144;
+$color-youtube: #da1725;
+
+//フォントサイズ
+//https://websemantics.uk/tools/responsive-font-calculator/
+
+body {
+	font-size: 16px;
+	font-size: 1.6rem; /* 16px*/
+	color: $color-text-primary;
+	line-height: calc(30 / 16); // (行送り / フォントサイズ)
+	@include tracking(50); /*letter-spacing*/
+}
+// p {
+// 	font-size: 14px; /* IE8以下とAndroid4.3以下用フォールバック */
+// 	font-size: 1.4rem;
+// 	line-height: calc(30 / 14);
+// 	@include tracking(50);
+// }
+
+h1 {
+	font-size: 37px; /* IE8以下とAndroid4.3以下用フォールバック */
+	font-size: 3.7rem;
+	// font-size: calc(2.3125rem + ((1vw - 3.75px) * 4));
+	line-height: calc(37 / 19);
+	min-height: 0vw;
+}
+h2 {
+	font-size: 30px; /* IE8以下とAndroid4.3以下用フォールバック */
+	font-size: 3rem;
+	// font-size: calc(1.875rem + ((1vw - 3.75px) * 3.6364));
+	min-height: 0vw;
+	line-height: calc(50 / 30);
+	font-style: italic;
+}
+h3 {
+	font-size: 20px; /* IE8以下とAndroid4.3以下用フォールバック */
+	font-size: 2rem;
+	// font-size: calc(1.25rem + ((1vw - 3.75px) * 1.2121));
+	min-height: 0vw;
+	line-height: calc(30 / 20);
+}
+@include pc {
+	h1 {
+		font-size: 70px;
+	}
+	h2 {
+		font-size: 60px;
+	}
+	h3 {
+		font-size: 30px;
+	}
+}
